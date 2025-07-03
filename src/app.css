@@ -1,0 +1,553 @@
+/* Definisikan variabel CSS untuk mode terang */
+:root {
+    --bg-color-first: #f8f9fa; /* Latar belakang utama (body) */
+    --bg-color-second: #ffffff; /* Latar belakang card/elemen putih */
+    --text-color-first: #333333; /* Warna teks utama */
+    --text-color-second: #555555; /* Warna teks sekunder (lead, paragraph, btn-outline-secondary) */
+    --text-color-third: #777; /* Warna teks tersier */
+    --heading-color: #212529; /* Warna heading */
+    --border-color: #e9ecef; /* Warna border (footer, code-title, table) */
+    --shadow-color: rgba(0, 0, 0, 0.1); /* Warna bayangan normal */
+    --shadow-hover-color: rgba(0, 0, 0, 0.175); /* Warna bayangan saat hover */
+    --navbar-bg: #f8f9fa; /* Latar belakang navbar, biasanya putih */
+    --navbar-brand-color: #333; /* Warna brand navbar */
+    --nav-link-color: #333; /* Warna link navbar */
+    --nav-link-hover-color: #007bff; /* Warna link navbar saat hover/aktif (biru Bootstrap) */
+    --footer-bg: #f8f9fa;
+    --card-bg: #ffffff;
+
+    /* Code & Markdown specific colors */
+    --code-bg: #282c34; /* Background code block (tetap gelap untuk contrast) */
+    --code-text: #abb2bf; /* Warna teks code block */
+    --inline-code-bg: rgba(0,0,0,0.05); /* Background inline code */
+    --inline-code-text: #e83e8c; /* Warna teks inline code */
+    --blockquote-border: #dee2e6; /* Border blockquote */
+    --blockquote-text: #6c757d; /* Teks blockquote */
+    --table-header-bg: #e9ecef; /* Background header tabel */
+    --table-border: #dee2e6; /* Border tabel */
+
+    /* Warna spesifik untuk ikon sosial agar konsisten di light/dark mode */
+    /* --social-github-hover: #333; */
+    /* --social-x-twitter-hover: #000; */
+}
+
+/* Variabel CSS untuk mode gelap - diterapkan saat <html> memiliki class 'dark-mode' */
+html.dark-mode {
+    --bg-color-first: #1a1a1a; /* Latar belakang utama gelap */
+    --bg-color-second: #2c2c2c; /* Latar belakang card/elemen gelap */
+    --text-color-first: #e0e0e0; /* Warna teks utama terang */
+    --text-color-second: #b0b0b0; /* Warna teks sekunder terang */
+    --text-color-third: #b4b4b4; /* Warna teks tersier terang */
+    --heading-color: #f0f0f0; /* Warna heading terang */
+    --border-color: #3a3a3a; /* Warna border gelap */
+    --shadow-color: rgba(0, 0, 0, 0.4); /* Warna bayangan gelap */
+    --shadow-hover-color: rgba(0, 0, 0, 0.6); /* Warna bayangan saat hover gelap */
+    --navbar-bg: #2c2c2c; /* Latar belakang navbar gelap */
+    --navbar-brand-color: #f0f0f0; /* Warna brand navbar terang */
+    --nav-link-color: #e0e0e0; /* Warna link navbar terang */
+    --nav-link-hover-color: #61dafb; /* Contoh warna cerah untuk hover/aktif di dark mode */
+    --footer-bg: #2c2c2c;
+    --card-bg: #2c2c2c;
+
+    /* Code & Markdown specific colors for dark mode */
+    --code-bg: #282c34; /* Tetap gelap untuk kontras */
+    --code-text: #abb2bf; /* Tetap sama */
+    --inline-code-bg: rgba(255,255,255,0.1); /* Background inline code lebih terang */
+    --inline-code-text: #ff85b3; /* Warna pink cerah untuk inline code */
+    --blockquote-border: #4a4a4a; /* Border blockquote gelap */
+    --blockquote-text: #b0b0b0; /* Teks blockquote terang */
+    --table-header-bg: #3a3a3a; /* Background header tabel gelap */
+    --table-border: #4a4a4a; /* Border tabel gelap */
+
+    /* Warna spesifik untuk ikon sosial agar kontras di dark mode */
+    /* --social-github-hover: #92e0ff; /* Contoh warna terang untuk GitHub di dark mode */
+    /* --social-x-twitter-hover: #ffffff; /* Putih untuk X di dark mode */
+}
+
+body {
+    font-family: 'Inter', sans-serif; /* Contoh font, sesuaikan jika ingin */
+    /* color: #333; /* Warna teks dasar yang lebih lembut */
+    /* background-color: #f8f9fa; /* Warna latar belakang halaman yang sedikit off-white */
+    color: var(--text-color-first);
+    background-color: var(--bg-color-first);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.logo-font-imperial-script {
+    font-family: "Imperial Script", cursive;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 25pt;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    /* color: #212529; /* Warna heading yang lebih gelap */
+    color: var(--heading-color);
+    font-weight: 700; /* Membuat heading lebih bold */
+}
+
+.lead {
+    font-size: 1.15rem; /* Ukuran font lead yang sedikit lebih besar */
+    line-height: 1.8; /* Tinggi baris yang lebih nyaman untuk dibaca */
+    max-width: 800px; /* Batasi lebar teks untuk keterbacaan yang lebih baik */
+    /* margin-left: auto;
+    margin-right: auto; */
+    color: var(--text-color-second);
+}
+
+.btn-primary {
+    /* Menyesuaikan warna tombol primary agar lebih menarik */
+    /* background-color: #007bff; /* Contoh: warna biru standar Bootstrap */
+    /* border-color: #007bff; */
+    /* transition: all 0.3s ease; /* Transisi halus untuk hover */
+    background-color: var(--nav-link-hover-color); /* Menggunakan warna dari tema */
+    border-color: var(--nav-link-hover-color);
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    /* background-color: #0056b3; /* Warna hover yang lebih gelap */
+    /* border-color: #0056b3; */
+    /* transform: translateY(-2px); /* Efek sedikit naik saat hover */
+    background-color: #0056b3; /* Hardcode untuk light mode */
+    border-color: #0056b3; /* Hardcode untuk light mode */
+    transform: translateY(-2px);
+}
+
+/* Contoh jika ingin btn-primary juga berubah di dark mode */
+html.dark-mode .btn-primary {
+    background-color: var(--nav-link-hover-color); /* Sama seperti link hover color */
+    border-color: var(--nav-link-hover-color);
+}
+html.dark-mode .btn-primary:hover {
+    background-color: #3ca0c7; /* Hardcode warna hover untuk dark mode */
+    border-color: #3ca0c7;
+}
+.btn-outline-secondary {
+    /* Menyesuaikan tombol outline */
+    /* border-color: #6c757d; */
+    /* color: #6c757d; */
+    /* transition: all 0.3s ease; */
+    border-color: var(--text-color-second);
+    color: var(--text-color-second);
+    transition: all 0.3s ease;
+}
+.btn-outline-secondary:hover {
+    /* background-color: #6c757d; */
+    /* color: #fff; */
+    /* transform: translateY(-2px); */
+    background-color: var(--text-color-second);
+    color: var(--bg-color-first); /* Warna teks tombol berubah ke warna latar belakang utama saat hover */
+    transform: translateY(-2px);
+}
+
+.footer {
+    /* border-top: 3px solid #e9ecef; /* Garis tipis di atas footer */
+    margin-top: 3rem; /* Memberikan ruang di atas footer */
+    border-top: 3px solid var(--border-color);
+    background-color: var(--footer-bg) !important;
+    color: var(--text-color-first);
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+.footer a {
+    text-decoration: none;
+    /* color: var(--bs-dark) !important;; */
+    color: var(--nav-link-hover-color) !important;
+    transition: color 0.2s ease;
+}
+.footer a:hover {
+    color: magenta !important;
+}
+
+.card {
+    /* transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transisi halus untuk hover kartu */
+    border: none;
+    background-color: var(--card-bg) !important;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+.card:hover {
+    /* transform: translateY(-5px); /* Efek sedikit naik saat hover */
+    /* box-shadow: 0 1rem 3rem rgba(0,0,0,.175)!important; /* Bayangan lebih besar saat hover */
+    border: none;
+}
+.hover-lift-shadow {
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transisi halus untuk hover kartu */
+}
+.hover-lift-shadow:hover {
+    transform: translateY(-5px); /* Efek sedikit naik saat hover */
+    /* box-shadow: 0 1rem 3rem rgba(0,0,0,.175)!important; /* Bayangan lebih besar saat hover */
+    box-shadow: 0 1rem 3rem var(--shadow-hover-color) !important;
+}
+.card-img-top-wrapper {
+    display: block; /* Memastikan link membungkus gambar dengan baik */
+    overflow: hidden; /* Penting untuk gambar di dalam rounded corner card */
+}
+.card-img-top {
+    width: 100%;
+    /* height: 180px;  Sudah diatur inline style, tapi bisa juga di sini */
+    object-fit: cover; /* Penting agar gambar tidak terdistorsi dan mengisi area */
+    transition: transform 0.3s ease; /* Efek zoom/hover pada gambar */
+}
+.card-img-top-wrapper:hover .card-img-top {
+    transform: scale(1.05); /* Efek zoom saat hover */
+}
+/* Untuk link judul agar tidak ada underline default */
+.card .card-title a {
+    text-decoration: none;
+    /* color: var(--bs-dark) !important;; */
+    color: var(--heading-color) !important;
+    transition: color 0.2s ease;
+}
+.card .card-title a:hover {
+    /* color: var(--bs-primary) !important;; /* Ubah warna saat hover, misalnya ke warna primary Bootstrap */
+    color: var(--nav-link-hover-color) !important;
+}
+
+.card-body h1 {
+    /* color: #6c757d; /* Warna teks sekunder */
+    color: var(--text-color-first);
+}
+.text-color-date {
+    /* color: #6c757d; /* Warna teks sekunder */
+    color: var(--text-color-third);
+}
+/* .card-text {
+    color: var(--text-lead) !important;
+} */
+
+.code-title {
+    /* background: #f5f5f5; */
+    /* color: #333; */
+    background: var(--table-header-bg); /* Menggunakan variabel */
+    color: var(--text-color-first); /* Menggunakan variabel */
+    font-size: .9em;
+    padding: .25rem 1rem;
+    border-top-left-radius: 0.4em;
+    border-top-right-radius: 0.4em;
+    /* border: 1px solid #e1e1e8; */
+    border: 1px solid var(--border-color); /* Menggunakan variabel */
+    border-bottom: none;
+    font-family: monospace;
+    margin-bottom: -8px;
+    margin-top: 1.2em;
+    display: inline-block;
+}
+
+/* .navbar-nav .nav-link {
+    padding-right: 0 !important;
+    padding-left: 1.5rem !important;
+} */
+
+/* Gaya untuk Hero Image Parallax di halaman detail blog */
+.blog-hero-image {
+    min-height: 400px; /* Tinggi minimum untuk gambar hero */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center; /* Akan diubah oleh JavaScript untuk efek parallax */
+    background-attachment: fixed;
+    position: relative; /* Penting untuk z-index jika ada overlay */
+    border-top-left-radius: var(--bs-border-radius-4); /* Agar sudut atas melengkung */
+    border-top-right-radius: var(--bs-border-radius-4);
+    /* box-shadow: inset 0 -50px 50px -20px rgba(0,0,0,0.3); /* Sedikit shadow di bagian bawah gambar */
+    box-shadow: inset 0 -50px 50px -20px var(--shadow-color);
+}
+
+/* Gaya untuk konten markdown di dalam card */
+.markdown-body {
+    font-family: 'Georgia', serif; /* Contoh font untuk konten, bisa diganti */
+    line-height: 1.7;
+    font-size: 1.05rem;
+    /* color: #333; */
+    color: var(--text-color-first);
+}
+.markdown-body h1,
+.markdown-body h2,
+.markdown-body h3,
+.markdown-body h4,
+.markdown-body h5,
+.markdown-body h6 {
+    font-family: 'Inter', sans-serif; /* Kembalikan font heading */
+    margin-top: 1.5em;
+    margin-bottom: 0.8em;
+    line-height: 1.3;
+    /* color: #212529; /* Warna heading */
+    color: var(--heading-color);
+}
+.markdown-body p {
+    margin-bottom: 1em;
+}
+.markdown-body a {
+    /* color: var(--bs-primary); /* Warna link di konten */
+    color: var(--nav-link-hover-color); /* Menggunakan variabel */
+    text-decoration: underline;
+}
+.markdown-body a:hover {
+    /* color: var(--bs-danger); */
+    /* color: var(--text-color-second); /* Ubah warna saat hover, misalnya */
+    color: magenta;
+}
+.markdown-body ul,
+.markdown-body ol {
+    padding-left: 2em;
+    margin-bottom: 1em;
+}
+.markdown-body li {
+    margin-bottom: 0.5em;
+}
+.markdown-body code:not(pre code) { /* Inline code */
+    /* background-color: rgba(0,0,0,0.05); */
+    background-color: var(--inline-code-bg);
+    padding: .2em .4em;
+    border-radius: .2em;
+    font-family: monospace;
+    font-size: 0.875em;
+    /* color: #e83e8c; /* Warna untuk inline code */
+    color: var(--inline-code-text);
+}
+.markdown-body pre { /* Code blocks */
+    /* background-color: #282c34; /* Warna background untuk code block */
+    /* color: #abb2bf; /* Warna teks untuk code block */
+    background-color: var(--code-bg);
+    color: var(--code-text);
+    padding: 1.25em;
+    border-radius: var(--bs-border-radius-4); /* Sesuaikan dengan rounded-4 */
+    overflow-x: auto; /* Scroll horizontal jika code terlalu panjang */
+    margin-top: 1.5em;
+    margin-bottom: 1.5em;
+}
+.markdown-body pre code {
+    font-family: 'Fira Code', 'JetBrains Mono', monospace; /* Font monospace untuk code */
+    font-size: 0.9em;
+    line-height: 1.5;
+    display: block; /* Penting agar code mengisi pre */
+}
+.markdown-body blockquote {
+    font-style: italic;
+    /* border-left: 4px solid var(--bs-light); */
+    border-left: 4px solid var(--blockquote-border);
+    padding-left: 1em;
+    margin: 1.5em 0;
+    /* color: #6c757d; /* Warna teks blockquote */
+    color: var(--blockquote-text);
+}
+.markdown-body table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1.5em 0;
+}
+.markdown-body th,
+.markdown-body td {
+    /* border: 1px solid #dee2e6; */
+    border: 1px solid var(--table-border);
+    padding: 0.75em;
+    text-align: left;
+}
+.markdown-body th {
+    /* background-color: #e9ecef; */
+    background-color: var(--table-header-bg);
+    font-weight: bold;
+}
+/* Responsive Images dalam konten markdown */
+.markdown-body img {
+    max-width: 100%;
+    height: auto;
+    display: block; /* Menghilangkan spasi ekstra di bawah gambar */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Badge bahasa pada code block */
+.language-badge {
+    /* Style sudah diatur inline di JS, tapi jika mau override/tambah di sini */
+    z-index: 10; /* Pastikan di atas code block */
+}
+
+/* Gaya untuk halaman About */
+.about-content {
+    display: flex; /* Menggunakan Flexbox untuk tata letak dua kolom */
+    gap: 2.5rem; /* Jarak antara kolom kiri dan kanan */
+    flex-wrap: wrap; /* Agar kolom bisa wrap ke bawah di layar kecil */
+    justify-content: center; /* Pusatkan di layar kecil */
+}
+.left-column {
+    flex: 0 0 320px; /* Lebar tetap untuk kolom kiri (foto + sosmed) */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Pusatkan item di kolom kiri */
+    text-align: center; /* Pusatkan teks di kolom kiri */
+}
+.right-column {
+    flex: 1; /* Kolom kanan akan mengambil sisa ruang */
+    min-width: 300px; /* Lebar minimum agar konten tidak terlalu sempit */
+}
+
+.photo-container {
+    width: 180px; /* Ukuran kontainer foto */
+    height: 180px;
+    margin: 0 auto 1.5rem auto; /* Pusatkan dan berikan margin bawah */
+    overflow: hidden; /* Penting untuk membulatkan gambar */
+    border-radius: 50%; /* Membuat kontainer bulat */
+    /* box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Efek bayangan */
+    box-shadow: 0 4px 15px var(--shadow-color); /* Gunakan variabel */
+    display: flex; /* Untuk mempusatkan gambar di dalamnya */
+    justify-content: center;
+    align-items: center;
+    /* background-color: #f0f0f0; /* Warna latar belakang jika gambar tidak proporsional */
+    background-color: var(--bg-color-second); /* Gunakan variabel */
+    transition: background-color 0.3s ease;
+}
+.profile-photo {
+    width: 100%; /* Isi kontainer */
+    height: 100%; /* Isi kontainer */
+    object-fit: cover; /* Pastikan gambar mengisi tanpa distorsi dan terpotong jika perlu */
+    border-radius: 50%; /* Memastikan gambar juga bulat */
+    transition: transform 0.3s ease; /* Efek transisi saat hover */
+}
+.profile-photo:hover {
+    transform: scale(1.05); /* Sedikit membesar saat dihover */
+}
+
+.social-links {
+    display: flex;
+    flex-direction: row; /* Biarkan ikon berjejer horizontal di bawah foto */
+    justify-content: center; /* Pusatkan ikon */
+    gap: 1rem; /* Jarak antar ikon */
+    margin-top: 1rem; /* Jarak dari foto */
+}
+.social-icon {
+    font-size: 2rem; /* Ukuran ikon */
+    /* color: #007bff; /* Warna default ikon (Bootstrap primary color) */
+    color: var(--nav-link-hover-color); /* Warna default ikon, mengikuti warna link hover */
+    transition: color 0.3s ease, transform 0.2s ease;
+    text-decoration: none; /* Hilangkan underline */
+}
+/* Warna ikon spesifik saat hover */
+.social-icon:hover {
+    transform: translateY(-3px); /* Efek sedikit naik saat hover */
+}
+.social-icon i.fa-envelope:hover,
+.social-icon i.fa-github:hover,
+.social-icon i.fa-linkedin:hover,
+.social-icon i.fa-twitter:hover,
+.social-icon i.fa-telegram:hover {
+    color: magenta;
+}
+
+/* CSS BARU UNTUK NAVBAR */
+.navbar {
+    background-color: var(--navbar-bg) !important;
+    transition: background-color 0.3s ease;
+}
+.navbar-nav .nav-link {
+    position: relative; /* Diperlukan untuk efek underline */
+    /* color: #333 !important; /* Warna default text link */
+    color: var(--nav-link-color) !important; /* Gunakan variabel, tambahkan !important */
+    font-weight: 500;
+    padding-left: 1.5rem !important; /* Jarak antar menu */
+    padding-right: 1.5rem !important; /* Jarak antar menu */
+    transition: color 0.3s ease; /* Transisi warna */
+}
+.navbar-nav .nav-link:hover {
+    /* color: #007bff !important; /* Warna saat hover */
+    color: var(--nav-link-hover-color) !important;
+}
+/* Efek Underline untuk Hover */
+.navbar-nav .nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -5px; /* Jarak dari teks link */
+    left: 50%; /* Mulai dari tengah */
+    transform: translateX(-50%); /* Geser ke kiri setengah lebar untuk pusatkan */
+    /* background-color: #007bff; /* Warna underline */
+    background-color: var(--nav-link-hover-color);
+    transition: width 0.3s ease-in-out; /* Animasi lebar */
+}
+.navbar-nav .nav-link:hover::after {
+    width: 100%; /* Lebar penuh saat hover */
+}
+/* Gaya untuk Menu Aktif */
+.navbar-nav .nav-link.active {
+    /* color: #007bff !important; /* Warna font saat aktif */
+    color: var(--nav-link-hover-color) !important;
+    font-weight: 700; /* Lebih tebal saat aktif */
+}
+/* Underline solid untuk menu aktif */
+.navbar-nav .nav-link.active::after {
+    width: 100%; /* Selalu lebar penuh untuk indikator aktif */
+}
+/* Gaya untuk Navbar Brand Hover */
+.navbar-brand.brand-hover {
+    /* color: #333; /* Warna default brand */
+    color: var(--navbar-brand-color);
+    font-weight: 700;
+    transition: color 0.3s ease, transform 0.3s ease;
+    text-decoration: none; /* Pastikan tidak ada underline */
+}
+.navbar-brand.brand-hover:hover {
+    /* color: #007bff; /* Warna saat hover */
+    color: var(--nav-link-hover-color);
+    transform: translateX(5px); /* Efek sedikit geser ke kanan */
+}
+
+.community-link a {
+    text-decoration: none;
+    color: var(--nav-link-hover-color) !important;
+    transition: color 0.2s ease;
+}
+.community-link a:hover {
+    color: magenta !important;
+}
+
+@media only screen and (max-width: 768px) {
+    .mx-5 {
+        /* background-color: lightblue; */
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+    }
+    .container-xl.px-0.px-md-4.px-xl-5 {
+        padding-left: 1rem !important;
+        padding-right: 1rem !important;
+    }
+
+    /* Penyesuaian untuk Navlink di mobile (saat navbar collapse) */
+    .navbar-nav .nav-link {
+        padding-left: 1rem !important; /* Kurangi padding di mobile */
+        padding-right: 1rem !important;
+        text-align: center; /* Pusatkan teks link di mobile */
+    }
+    .navbar-nav .nav-link::after {
+        bottom: -2px; /* Sesuaikan posisi underline di mobile */
+    }
+    /* Atur ulang padding tombol dark mode di mobile agar tidak terlalu lebar */
+    .nav-item .btn {
+        padding-left: 1rem;
+        padding-right: 1rem;
+        margin-top: 0.5rem !important; /* Sesuaikan margin untuk mobile */
+        margin-bottom: 0.5rem;
+    }
+    /* Pastikan tombol dark mode di tengah saat mobile */
+    .navbar-collapse.show .nav-item {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+    }
+    .navbar-toggler {
+        background-color: oldlace;
+    }
+
+    .about-content {
+        flex-direction: column; /* Ubah ke satu kolom di layar kecil */
+        gap: 1.5rem;
+    }
+    .left-column, .right-column {
+        flex: none; /* Hilangkan flex basis */
+        width: 100%; /* Ambil penuh lebar */
+        min-width: unset; /* Reset min-width */
+        text-align: center; /* Pusatkan semua teks/konten di mode kolom tunggal */
+    }
+    .photo-container {
+        margin-bottom: 1rem;
+    }
+}
