@@ -73,7 +73,7 @@
                     <li>Frontend: Svelte, SvelteKit, Bootstrap CSS, Tailwind CSS</li>
                     <li>Database: MySQL, PostgreSQL, MongoDB, Redis</li>
                     <li>DevOps: Git, Docker, CI/CD</li>
-                    <li>Deployment: DigitalOcean, Fly.io, Vercel, Netlify, Railway, Render</li>
+                    <li>Deployment: DigitalOcean, Fly.io, Vercel, Netlify, Render</li>
                     <li>Testing: Jest, Cypress, Selenium</li>
                     <li>Version Control: GitHub, GitLab, Bitbucket</li>
                     <li>Management Tools: Jira, Confluence, Notion, ClickUp, Trello</li>
