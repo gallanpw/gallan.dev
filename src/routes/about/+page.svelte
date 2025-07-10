@@ -50,7 +50,8 @@
         <div class="about-content">
             <div class="left-column">
                 <div class="photo-container mb-4">
-                    <img src={photoPath} alt="Gallan Widyanto" class="profile-photo" />
+                    <!-- <img src={photoPath} alt="Gallan Widyanto" class="profile-photo" /> -->
+                    <img src="https://imagedelivery.net/ocG287Hqx13muJG7zfKTyA/6f721359-3322-4622-e3c2-e92c3c8d7000/public" alt="Gallan Widyanto" class="profile-photo" />
                 </div>
                 <h3 class="text-center">Gallan Probo Widyanto</h3>
                 <h6 class="text-color-date">Software Developer</h6>
