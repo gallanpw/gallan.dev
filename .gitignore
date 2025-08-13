@@ -21,3 +21,12 @@ Thumbs.db
 # Vite
 vite.config.js.timestamp-*
 vite.config.ts.timestamp-*
+
+# Ignore the entire 'certificate' directory inside 'static'
+/static/certificate/
+
+# Ignore the 'favicon.png' file inside 'static'
+/static/favicon.png
+/static/favicon-svelte.png
+/static/favicon-sapper.png
+/static/photo-gallan.jpg
