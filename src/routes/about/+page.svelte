@@ -71,14 +71,14 @@
                 <p class="lead">🔧 Tech stack I use</p>
                 <ul class="lead">
                     <li>Backend: ExpressJS, HapiJS, Laravel, CodeIgniter</li>
-                    <li>Frontend: Svelte, SvelteKit, Bootstrap CSS, Tailwind CSS</li>
-                    <li>Database: MySQL, PostgreSQL, MongoDB, Redis</li>
+                    <li>Frontend: Svelte, SvelteKit, jQuery, Bootstrap CSS, Tailwind CSS</li>
+                    <li>Database: MySQL, PostgreSQL, SQLite, MongoDB, Redis</li>
                     <li>DevOps: Git, Docker, CI/CD</li>
-                    <li>Deployment: DigitalOcean, Fly.io, Vercel, Netlify, Render</li>
+                    <li>Deployment: DigitalOcean, Fly.io, Vercel, Netlify, Render, Railway</li>
                     <li>Testing: Jest, Cypress, Selenium</li>
                     <li>Version Control: GitHub, GitLab, Bitbucket</li>
                     <li>Management Tools: Jira, Confluence, Notion, ClickUp, Trello</li>
-                    <li>Other: RESTful APIs, JWT/Auth, Postman, Swagger</li>
+                    <li>Other: Node.js, RESTful APIs, JWT/Auth, Postman, Swagger</li>
                 </ul>
                 <p class="lead">
                     Aside from coding, I also love reading books, learning new things, and exploring the latest technologies. I am always looking for new challenges and opportunities to grow as a developer. Feel free to connect with me on social media on the side!
